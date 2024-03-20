@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sorteios</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mx-auto p2">
+        <div class="container-sm p-2 g-col-6">
+            <h1>Página inicial de sorteios</h1>
+        </div>
+        <div class="container-sm  p-2 g-col-6">
+            <button id="novoSorteioBtn" type="button" class="btn btn-primary btn-lg">Novo Sorteio</button>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('novoSorteioBtn').addEventListener('click', function() {
+            fetch('http://localhost:8080/draws/new', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Se a requisição for bem-sucedida, redirecionar para formSorteio.html
+                    window.location.href = 'formSorteio.html';
+                } else {
+                    // Se ocorrer algum erro na requisição, exibir uma mensagem de erro ou lidar com ele de outra forma
+                    console.error('Erro na requisição POST');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+        });
+    </script>
+</body>
+</html>

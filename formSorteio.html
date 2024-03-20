@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Apostas</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mx-auto">
+        <h1>Formulário de Apostas</h1>
+        <form>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" required>
+            </div>
+            <div class="form-group">
+                <label for="numero1">Número 1 (entre 1 e 50):</label>
+                <input type="number" class="form-control" id="numero1" name="numero1" min="1" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="numero2">Número 2 (entre 1 e 50):</label>
+                <input type="number" class="form-control" id="numero2" name="numero2" min="1" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="numero3">Número 3 (entre 1 e 50):</label>
+                <input type="number" class="form-control" id="numero2" name="numero3" min="1" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="numero4">Número 4 (entre 1 e 50):</label>
+                <input type="number" class="form-control" id="numero2" name="numero4" min="1" max="50" required>
+            </div>
+            <div class="form-group">
+                <label for="numero5">Número 5 (entre 1 e 50):</label>
+                <input type="number" class="form-control" id="numero2" name="numero5" min="1" max="50" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmar Aposta</button>
+            <button type="button" class="btn btn-secondary" id="enviarNomeCpf">Sorteio Surpresa</button>
+            <button type="button" class="btn btn-danger">Finalizar Fase de Apostas</button>
+        </form>
+    </div>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('enviarNomeCpf').addEventListener('click', function() {
+            var nome = document.getElementById('nome').value;
+            var cpf = document.getElementById('cpf').value;
+            alert("Nome: " + nome + "\nCPF: " + cpf);
+        });
+    </script>
+</body>
+</html>

@@ -1,17 +1,17 @@
 // Função para confirmar o preenchimento do formulário de aposta
-document.getElementById('btConfirma').addEventListener('click', function() {
-    var nome = document.getElementById('nome').value;
+document.getElementById('btSubmit').addEventListener('click', function() {
+    var name = document.getElementById('name').value;
     var cpf = document.getElementById('cpf').value;
-    var numero1 = document.getElementById('numero1').value;
-    var numero2 = document.getElementById('numero2').value;
-    var numero3 = document.getElementById('numero3').value;
-    var numero4 = document.getElementById('numero4').value;
-    var numero5 = document.getElementById('numero5').value;
+    var number1 = document.getElementById('number1').value;
+    var number2 = document.getElementById('number2').value;
+    var number3 = document.getElementById('number3').value;
+    var number4 = document.getElementById('number4').value;
+    var number5 = document.getElementById('number5').value;
     
     var jsonData = {
-        betterName: nome,
+        betterName: name,
         betterCPF: cpf,
-        chosenNumbers: [numero1, numero2, numero3, numero4, numero5]
+        chosenNumbers: [number1, number2, number3, number4, number5]
     };
 
 
@@ -27,7 +27,7 @@ document.getElementById('btConfirma').addEventListener('click', function() {
         if (response.ok) {
             alert('Aposta realizada com sucesso!');
 
-           document.getElementById('formAposta').reset();
+           document.getElementById('formBet').reset();
         } else {
             console.error('Erro ao realizar a aposta!');
         }
@@ -39,13 +39,13 @@ document.getElementById('btConfirma').addEventListener('click', function() {
 
 
 
-// Função para sortear um número aleatório
-document.getElementById('enviarNomeCpf').addEventListener('click', function() {
-    var nome = document.getElementById('nome').value;
+// Função para sortear um número aleatório para a aposta
+document.getElementById('btRandom').addEventListener('click', function() {
+    var name = document.getElementById('name').value;
     var cpf = document.getElementById('cpf').value;
 
     var jsonData = {
-        betterName: nome,
+        betterName: name,
         betterCPF: cpf
     };
 
@@ -67,9 +67,9 @@ document.getElementById('enviarNomeCpf').addEventListener('click', function() {
 
 
 // Função para finalizar a fase de aposta e apurar os resultados
-document.getElementById('btSortear').addEventListener('click', function() {
+document.getElementById('btDraw').addEventListener('click', function() {
     if(confirm("Finalizar fase de apostas e realizar sorteio?")){    
-        fetch("http://localhost:8080/draws/sortear", {
+        fetch("http://localhost:8080/draws/makeDraw", {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

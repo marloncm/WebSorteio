@@ -7,36 +7,36 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container mx-auto">
+    <div class="container mx-auto"> <!--div contendo toda a página -->
         <h1>Formulário de Apostas</h1>
-        <form id="formAposta">
+        <form id="formBet">
             <div class="form-group ">
-                <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                <label for="name">Nome:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="cpf">CPF:</label>
                 <input type="text" class="form-control" id="cpf" name="cpf" required>
             </div>
             <div class="form-group d-flex flex-column p-2">
-                <label for="numero1">Número 1 (entre 1 e 50):</label>
-                <input type="number" class="form-control" id="numero1" name="numero1" min="1" max="50" required>
+                <label for="number1">Número 1 (entre 1 e 50):</label>
+                <input type="number" class="form-control" id="number1" name="number1" min="1" max="50" required>
             
-                <label for="numero2">Número 2 (entre 1 e 50):</label>
-                <input type="number" class="form-control" id="numero2" name="numero2" min="1" max="50" required>
+                <label for="number2">Número 2 (entre 1 e 50):</label>
+                <input type="number" class="form-control" id="number2" name="number2" min="1" max="50" required>
            
-                <label for="numero3">Número 3 (entre 1 e 50):</label>
-                <input type="number" class="form-control" id="numero3" name="numero3" min="1" max="50" required>
+                <label for="number3">Número 3 (entre 1 e 50):</label>
+                <input type="number" class="form-control" id="number3" name="number3" min="1" max="50" required>
             
-                <label for="numero4">Número 4 (entre 1 e 50):</label>
-                <input type="number" class="form-control" id="numero4" name="numero4" min="1" max="50" required>
+                <label for="number4">Número 4 (entre 1 e 50):</label>
+                <input type="number" class="form-control" id="number4" name="number4" min="1" max="50" required>
             
-                <label for="numero5">Número 5 (entre 1 e 50):</label>
-                <input type="number" class="form-control" id="numero5" name="numero5" min="1" max="50" required>
+                <label for="number5">Número 5 (entre 1 e 50):</label>
+                <input type="number" class="form-control" id="number5" name="number5" min="1" max="50" required>
             </div>
-            <button type="button" class="btn btn-primary" id="btConfirma">Confirmar Aposta</button>
-            <button type="button" class="btn btn-secondary" id="enviarNomeCpf">Sorteio Surpresa</button>
-            <button type="button" class="btn btn-danger" id="btSortear">Finalizar Apostas</button>
+            <button type="button" class="btn btn-primary" id="btSubmit">Confirmar Aposta</button>
+            <button type="button" class="btn btn-secondary" id="btRandom">Sorteio Surpresa</button>
+            <button type="button" class="btn btn-danger" id="btDraw">Finalizar Apostas</button>
         </form>
     </div>
     

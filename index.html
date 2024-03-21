@@ -9,17 +9,18 @@
 <body>
     <div class="container mx-auto p2">
         <div class="container-sm p-2 g-col-6">
-            <h1>Página inicial de sorteios</h1>
+            <h1>Bem vindo à página de sorteios!</h1>
+            <h2>Clique em Novo Sorteio para começar uma nova fase de apostas.</h2>
         </div>
         <div class="container-sm  p-2 g-col-6">
-            <button id="novoSorteioBtn" type="button" class="btn btn-primary btn-lg">Novo Sorteio</button>
+            <button id="btNewDraw" type="button" class="btn btn-primary btn-lg">Novo Sorteio</button>
         </div>
     </div>
 
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-        document.getElementById('novoSorteioBtn').addEventListener('click', function() {
-            fetch('http://localhost:8080/draws/new', {
+    
+    <script> //como essa página só tem um botão, não achei necessário criar um arquivo js
+        document.getElementById('btNewDraw').addEventListener('click', function() {
+            fetch('http://localhost:8080/draws/startNewDraw', { //endpoint que inicia um novo sorteio
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -27,11 +28,11 @@
             })
             .then(response => {
                 if (response.ok) {
-                    // Se a requisição for bem-sucedida, redirecionar para formSorteio.html
+                    // Se a requisição for bem-sucedida, redireciona para a página de registro de apostas
                     window.location.href = 'formSorteio.html';
                 } else {
-                    // Se ocorrer algum erro na requisição, exibir uma mensagem de erro ou lidar com ele de outra forma
-                    console.error('Erro na requisição POST');
+                    // Se ocorrer algum erro na requisição, exibe uma mensagem de erro
+                    console.error('Erro ao iniciar novo sorteio.');
                 }
             })
             .catch(error => {
@@ -39,5 +40,7 @@
             });
         });
     </script>
+
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
